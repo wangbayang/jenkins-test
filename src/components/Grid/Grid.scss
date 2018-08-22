@@ -1,0 +1,41 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 10vh 30vh 10vh;
+  grid-gap: 5px;
+  grid-template-areas:
+    ". h h h h h h h h h h ."
+    "c c c c c c c c c c m m"
+    ". f f f f f f f f f f .";
+  & > div {
+    border-radius: 5px;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    border: 1px solid red;
+  }
+  .header {
+    grid-area: h;
+  }
+  .menu {
+    grid-area: m;
+  }
+  .content {
+    grid-area: c;
+  }
+  .footer {
+    grid-area: f;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .container {
+    .header {
+      background-color: red;
+    }
+    grid-template-areas:
+    "h h h h h h h h h h h h"
+    "c c c c c c c c c c c c"
+    "f f f f f f f f f f f f";
+  }
+}
